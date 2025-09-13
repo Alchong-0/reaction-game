@@ -9,6 +9,8 @@ let letter = alphabet[Math.floor(Math.random() * alphabet.length)];
 const keyElement = document.getElementById('key');
 const startElement = document.getElementById('start');
 const scoreElement = document.getElementById('score');
+const modal = document.getElementById('modalMsg');
+const closeModal = document.getElementsByClassName("close")[0];
 
 startElement.addEventListener('click', () => {
     startElement.setAttribute('click-event', 'true');
@@ -34,6 +36,8 @@ function endGame() {
 
     const scoreMsg = `Congratulations! You pressed ${correctKeys} letters in 30 seconds`;
     scoreElement.innerText = scoreMsg;
+
+    modal.style.display = "block"
 }
 
 function generateRandomLetter() {
@@ -43,3 +47,13 @@ function generateRandomLetter() {
     }
     return newLetter;
 }
+
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
