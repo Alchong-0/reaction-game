@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightskyblue;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#keyParent {
+    display: flex;
+    justify-content: center;
+}
+
+#key {
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    font-size: 50px;
+    background-color: yellow;
+}

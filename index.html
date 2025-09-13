@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reaction Game</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h1>Test your reaction time!</h1>
+        <p>Click **start** to begin!</p>
+        <div id="keyParent">
+            <p id="key"></p> <!-- This will display the key to press -->
+        </div>
+        <div id="modalMsg" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="message"></p> <!-- This will display any status messages -->
+                <p id="score"></p>
+            </div>
+        </div>
+        
+        <div>
+            <button type="button" id="start">Start</button> <!-- To start the game -->
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
