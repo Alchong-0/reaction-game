@@ -11,17 +11,18 @@ const startElement = document.getElementById('start');
 const scoreElement = document.getElementById('score');
 const modal = document.getElementById('modalMsg');
 const closeModal = document.getElementsByClassName("close")[0];
+const timerElement = document.getElementById('timer');
 
 startElement.addEventListener('click', () => {
-    startElement.setAttribute('click-event', 'true');
 
     scoreElement.innerText = '';
 
     keyElement.innerHTML = letter;
     window.addEventListener("keydown", keydownEvent);
+    countdown();
 });
 
-setTimeout(endGame, 30000);
+
 
 function keydownEvent(e) {
     if (e.key === letter) {
@@ -29,15 +30,6 @@ function keydownEvent(e) {
         letter = generateRandomLetter();
         keyElement.innerHTML = letter;
     }
-}
-
-function endGame() {
-    window.removeEventListener("keydown", keydownEvent);
-
-    const scoreMsg = `Congratulations! You pressed ${correctKeys} letters in 30 seconds`;
-    scoreElement.innerText = scoreMsg;
-
-    modal.style.display = "block"
 }
 
 function generateRandomLetter() {
@@ -57,3 +49,22 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 } 
+
+function countdown() {
+    let sec = 29;
+    timerElement.style.display = "block";
+    let timer = setInterval(() => {
+        timerElement.innerHTML = `Time remaining: ${sec}s`;
+        sec--;
+        
+        if (sec < 0) {
+            clearInterval(timer);
+            window.removeEventListener("keydown", keydownEvent);
+
+            const scoreMsg = `Congratulations! You pressed ${correctKeys} letters in 30 seconds`;
+            scoreElement.innerText = scoreMsg;
+
+            modal.style.display = "block";
+        }
+    }, 1000);
+}
