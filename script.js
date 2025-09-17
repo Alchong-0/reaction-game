@@ -14,12 +14,13 @@ const closeModal = document.getElementsByClassName("close")[0];
 const timerElement = document.getElementById('timer');
 
 startElement.addEventListener('click', () => {
-
+    startElement.style.display = "none";
     scoreElement.innerText = '';
 
     keyElement.innerHTML = letter;
     window.addEventListener("keydown", keydownEvent);
     countdown();
+
 });
 
 
@@ -65,6 +66,7 @@ function countdown() {
             scoreElement.innerText = scoreMsg;
 
             modal.style.display = "block";
+            startElement.style.display = "block";
         }
     }, 1000);
 }

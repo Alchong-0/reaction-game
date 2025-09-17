@@ -2,7 +2,8 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: lightskyblue;
+    margin: 0;
+    background-color: lightblue;
 }
 
 h1 {
@@ -18,13 +19,14 @@ h1 {
     width: 70px;
     height: 70px;
     border: 2px solid black;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
 
     font-size: 50px;
-    background-color: yellow;
+    background-color: white;
 }
 
 .modal {
@@ -65,4 +67,16 @@ h1 {
 #timer {
   display: none;
   margin-bottom: 50px;
+}
+
+.libertinus-keyboard-regular {
+  font-family: "Libertinus Keyboard", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#start {
+  padding: 8px 15px 8px 15px;
+  font-size: 15px;
+  font-weight: bold;
 }
